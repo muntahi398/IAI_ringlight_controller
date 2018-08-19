@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/muntahi/catkin_ws/src/iai_ringlight/cmake-build-debug/devel/setup.sh
