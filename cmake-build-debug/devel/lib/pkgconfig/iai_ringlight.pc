@@ -1,8 +1,0 @@
-prefix=/home/muntahi/catkin_ws/src/iai_ringlight/cmake-build-debug/devel
-
-Name: iai_ringlight
-Description: Description of iai_ringlight
-Version: 0.1.0
-Cflags: -I/home/muntahi/catkin_ws/src/iai_ringlight/cmake-build-debug/devel/include
-Libs: -L/home/muntahi/catkin_ws/src/iai_ringlight/cmake-build-debug/devel/lib 
-Requires: 
