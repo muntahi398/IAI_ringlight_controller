@@ -12,25 +12,24 @@ char message[2] , server_reply[65];
 bool add(iai_ringlight::iai_ringlight_in::Request  &req,
          iai_ringlight::iai_ringlight_in::Response &res)
 {
-  res.sum = req.a + req.b;
+  //res.sum = req.a + req.b;
   int x1,y1=0;
   bzero(server_reply, sizeof(server_reply));
-  ROS_INFO("request: x=%ld, y=%ld, ", (long int)req.a, (long int)req.b); //'a'=%d   // add "uint8 c" in server
+  //ROS_INFO("request: x=%ld, y=%ld, ", (long int)req.a, (long int)req.b); //'a'=%d   // add "uint8 c" in server
+     ROS_INFO("request: x=%ld ", (long int)req.a);   //'a'=%d   // add "uint8 c" in server
   ROS_INFO("sending back response: [%ld]", (long int)res.sum);
   x1= (int)req.a;
-  message[0]=x1+'0'; message[1]=int(req.b)+'0';
+  message[0]=x1+'0'; //message[1]=int(req.b)+'0';
 //  message[1]=req.c;  bzero(message, sizeof(message));
   puts(message);
   //Send some data
   if( send(sock , message , sizeof(message) , 0) < 0) //sizeof(message)
   {
     puts("Send failed_client");
-    //return 1;
   }
   if( recv(sock , server_reply , 65, 0) < 0)
   {
     puts("recv failed");
-    //break;
   }
 
   printf("sent it. ");

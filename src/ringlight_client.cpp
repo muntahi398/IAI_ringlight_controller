@@ -13,15 +13,15 @@ int main(int argc, char **argv)
   }
 
   ros::NodeHandle n;
-//  ros::ServiceClient client = n.serviceClient<iai_ringlight::iai_ringlight_in>("add_two_ints");
   ros::ServiceClient client = n.serviceClient<iai_ringlight::iai_ringlight_in>("IAI_ringlight_controller");
   iai_ringlight::iai_ringlight_in srv;
   srv.request.a = atoll(argv[1]);
-  srv.request.b = atoll(argv[2]);
+  //srv.request.b = atoll(argv[2]);
 //  srv.request.c = atoll(argv[3]);
   if (client.call(srv))
   {
-    ROS_INFO("Sum: %ld", (long int)srv.response.sum);
+    //ROS_INFO("Sum: %ld", (long int)srv.response.sum);
+    ROS_INFO("Finished processing client.");
   }
   else
   {
