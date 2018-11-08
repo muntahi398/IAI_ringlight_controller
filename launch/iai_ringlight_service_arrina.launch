@@ -1,0 +1,6 @@
+<launch>
+  <node name="iai_ringlight_server" pkg="iai_ringlight_controller" type="ringlight_server"  />
+  <param name="ip" value="10.9.42.13" />
+</launch>
+
+

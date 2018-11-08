@@ -1,10 +1,10 @@
 #include "ros/ros.h"
-#include "iai_ringlight/iai_ringlight_in.h"
+#include "iai_ringlight_controller/iai_ringlight_in.h"
 #include <cstdlib>
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "add_two_ints_client");
+  ros::init(argc, argv, "iai_ringlight_client");
   if (argc != 3)
   {
     ROS_INFO("usage: iai_ringlight_in_client + char X Y 'a'");
@@ -13,8 +13,8 @@ int main(int argc, char **argv)
   }
 
   ros::NodeHandle n;
-  ros::ServiceClient client = n.serviceClient<iai_ringlight::iai_ringlight_in>("IAI_ringlight_controller");
-  iai_ringlight::iai_ringlight_in srv;
+  ros::ServiceClient client = n.serviceClient<iai_ringlight_controller::iai_ringlight_in>("iai_ringlight_controller");
+  iai_ringlight_controller::iai_ringlight_in srv;
   srv.request.a = atoll(argv[1]);
   //srv.request.b = atoll(argv[2]);
 //  srv.request.c = atoll(argv[3]);
@@ -25,7 +25,7 @@ int main(int argc, char **argv)
   }
   else
   {
-    ROS_ERROR("Failed to call service IAI_ringlight_controller");
+    ROS_ERROR("Failed to call service iai_ringlight_controller");
     return 1;
   }
 
