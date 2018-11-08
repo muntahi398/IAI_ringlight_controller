@@ -3,6 +3,6 @@
 
 For the server, Launch file is available with configurable IP address:
  Launch
-**roslaunch iai_ringlight IAI_ringlight_service.launch**
+**roslaunch iai_ringlight_controller iai_ringlight_service.launch**
  <Client:>
-**rosrun iai_ringlight ringlight_client 4 8**
+**rosrun iai_ringlight_controller ringlight_client 4**
