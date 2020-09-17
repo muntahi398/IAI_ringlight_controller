@@ -1,5 +1,5 @@
 #include "ros/ros.h"
-#include "iai_ringlight_controller/iai_ringlight_in.h"
+#include <iai_ringlight_msgs/iai_ringlight_in.h>
 
 #include<stdio.h> //printf
 #include<string.h>    //strlen
@@ -9,8 +9,8 @@
 int sock, sock1;
 char message[2] , server_reply[65];
 
-bool add(iai_ringlight_controller::iai_ringlight_in::Request  &req,
-         iai_ringlight_controller::iai_ringlight_in::Response &res)
+bool add(iai_ringlight_msgs::iai_ringlight_in::Request  &req,
+         iai_ringlight_msgs::iai_ringlight_in::Response &res)
 {
   //res.sum = req.a + req.b;
   int x1,y1=0;
